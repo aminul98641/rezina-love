@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#170d25" />
+  <title>A Little World for Rezina ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="floating-layer" id="floatingLayer" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Home"><span class="brand-heart">♥</span> our little universe</a>
+    <button class="sound-toggle" id="soundToggle" type="button" aria-label="Toggle ambient sound">♫ <span>Sound off</span></button>
+  </header>
+
+  <main>
+    <section class="screen hero active" id="home">
+      <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
+      <div class="eyebrow"><span class="sparkle">✦</span> A little place made just for you <span class="sparkle">✦</span></div>
+      <h1>Welcome to your<br><em>little universe,</em> Rezina.</h1>
+      <p class="hero-copy">A quiet corner of the world where the skies are softer, the moments are sweeter, and you never have to feel alone.</p>
+      <button class="primary-btn" data-go="memories">Step into our world <span>↗</span></button>
+      <div class="scroll-note">TAKE YOUR TIME <span>↓</span></div>
+      <div class="hero-glow"></div>
+    </section>
+
+    <section class="screen memories" id="memories">
+      <div class="section-kicker">01 — LITTLE MOMENTS</div>
+      <h2>Some moments deserve<br><em>their own little sky.</em></h2>
+      <p class="section-copy">A few glimpses of someone who makes ordinary days feel a little more special.</p>
+      <div class="photo-gallery">
+        <figure class="photo-card photo-main">
+          <div class="photo-frame"><img src="assets/rezina-photo.png" alt="Rezina standing outdoors in a traditional outfit"></div>
+          <figcaption><span>01</span> A moment to keep <i>✧</i></figcaption>
+        </figure>
+        <figure class="photo-card photo-side">
+          <div class="photo-frame"><img src="assets/rezina-portrait.jpg" alt="Rezina smiling for a portrait"></div>
+          <figcaption><span>02</span> That lovely smile <i>♡</i></figcaption>
+        </figure>
+      </div>
+      <button class="text-btn" data-go="promise">There's more ahead <span>→</span></button>
+    </section>
+
+    <section class="screen promise" id="promise">
+      <div class="section-kicker">02 — A LITTLE PROMISE</div>
+      <div class="promise-icon">♡</div>
+      <h2>Wherever life takes us,<br><em>you won't walk alone.</em></h2>
+      <p class="promise-copy">On bright days and cloudy ones, through silly laughter and quiet moments, I hope you always feel respected, understood, and cared for.</p>
+      <div class="promise-note">
+        <span class="note-star">✦</span>
+        <p>One day at a time.<br>One memory at a time.<br>Still cheering for you.</p>
+        <span class="note-sign">— Aminul</span>
+      </div>
+      <button class="primary-btn" data-go="garden">Visit the heart garden <span>↗</span></button>
+    </section>
+
+    <section class="screen garden" id="garden">
+      <div class="section-kicker">03 — THE HEART GARDEN</div>
+      <h2>A little happiness<br><em>for you to collect.</em></h2>
+      <p class="section-copy">Tap anywhere and let a little love-shaped sparkle bloom.</p>
+      <div class="garden-scene" id="gardenScene">
+        <div class="moon"></div><div class="hill hill-back"></div><div class="hill hill-front"></div>
+        <div class="flower f1">✿</div><div class="flower f2">✿</div><div class="flower f3">✿</div>
+        <div class="garden-message">You make this world<br>a softer place. <span>♡</span></div>
+      </div>
+      <button class="text-btn" data-go="gift">One last little thing <span>→</span></button>
+    </section>
+
+    <section class="screen gift-screen" id="gift">
+      <div class="section-kicker">04 — JUST FOR YOU</div>
+      <div class="gift-stars">✦　✧　✦</div>
+      <h2>A surprise is<br><em>waiting for you.</em></h2>
+      <p class="section-copy">Some things are worth waiting for. This little box has a moment reserved just for you.</p>
+      <div class="gift-wrap" id="giftWrap">
+        <div class="gift-aura"></div>
+        <div class="gift-box" id="giftBox" role="button" tabindex="0" aria-label="Locked surprise gift">
+          <div class="gift-lid"><span class="ribbon"></span><span class="bow">♡</span></div>
+          <div class="gift-body"><span class="ribbon vertical"></span><span class="lock">🔒</span></div>
+        </div>
+      </div>
+      <div class="countdown-card" id="countdownCard">
+        <div class="countdown-label">UNTIL YOUR LITTLE SURPRISE</div>
+        <div class="countdown" id="countdown">
+          <div><strong id="days">--</strong><span>days</span></div><b>:</b>
+          <div><strong id="hours">--</strong><span>hours</span></div><b>:</b>
+          <div><strong id="minutes">--</strong><span>minutes</span></div><b>:</b>
+          <div><strong id="seconds">--</strong><span>seconds</span></div>
+        </div>
+        <p id="countdownHint">A little more patience, Rezina. ✨</p>
+      </div>
+      <div class="unlocked-message hidden" id="unlockedMessage">
+        <div class="unlocked-icon">🎁</div>
+        <h3>Your moment is here, Rezina.</h3>
+        <p>A little surprise, sent with care from <strong>Aminul</strong>.<br>May it bring a smile to your day. ♡</p>
+        <button class="primary-btn" id="openGift">Open your surprise <span>♡</span></button>
+      </div>
+      <div class="final-sign">Made with care <span>♡</span> Aminul Islam</div>
+    </section>
+  </main>
+
+  <nav class="page-dots" aria-label="Page navigation">
+    <button class="dot active" data-go="home" aria-label="Home"></button>
+    <button class="dot" data-go="memories" aria-label="Memories"></button>
+    <button class="dot" data-go="promise" aria-label="A little promise"></button>
+    <button class="dot" data-go="garden" aria-label="Heart garden"></button>
+    <button class="dot" data-go="gift" aria-label="Surprise"></button>
+  </nav>
+
+  <div class="modal hidden" id="surpriseModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+      <div class="modal-spark">✧ ♡ ✧</div>
+      <h2 id="modalTitle">A little note<br><em>just for you.</em></h2>
+      <p>Rezina, I hope life gives you a thousand reasons to smile. Keep being your lovely self, keep dreaming, and never forget that someone is always wishing the very best for you.</p>
+      <div class="modal-from">With warmth, <strong>Aminul</strong> ♡</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
